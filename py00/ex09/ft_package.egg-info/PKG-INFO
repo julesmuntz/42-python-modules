@@ -1,0 +1,9 @@
+Metadata-Version: 2.1
+Name: ft-package
+Version: 0.0.1
+Summary: A sample test package
+Home-page: http://example.com
+Author: Jules Muntz Berger
+Author-email: julmuntz@student.42.fr
+License: MIT
+License-File: LICENSE
