@@ -15,7 +15,10 @@ def ft_tqdm(lst: range) -> None:
         blocks = int((i / total) * bar_width)
         spaces = bar_width - blocks
         print(
-            f"{str(percentage).rjust(3)}%|{'█' * blocks}{' ' * spaces}| {str(i).rjust(3)}/{total} [00:{str((int(elapsed_time))).zfill(2)}<00:00, {rate:.2f}it/s]",
+            f"{str(percentage).rjust(3)}%|{'█' * blocks}{' ' * spaces}| \
+                {str(i).rjust(3)}/{total} [00:\
+                    {str((int(elapsed_time))).zfill(2)}\
+                        <00:00, {rate:.2f}it/s]",
             end="\r",
             flush=True,
         )

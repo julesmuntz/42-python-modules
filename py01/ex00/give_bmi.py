@@ -1,7 +1,8 @@
 from math import pow
 
 
-def give_bmi(height: list[int | float], weight: list[int | float]) -> list[int | float]:
+def give_bmi(height: list[int | float],
+             weight: list[int | float]) -> list[int | float]:
     return [w / pow(h, 2) for w, h in zip(weight, height)]
 
 

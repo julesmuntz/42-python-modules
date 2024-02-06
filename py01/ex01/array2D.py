@@ -1,5 +1,5 @@
 def slice_me(family: list, start: int, end: int) -> list:
-    if type(family) != list:
+    if type(family) is not list:
         return print("Error: not a list")
     start = abs(start)
     end = abs(end)

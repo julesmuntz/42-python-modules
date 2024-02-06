@@ -69,7 +69,11 @@ def main():
             "z": "--.. ",
         }
     )
-    if not sys.argv[1].isalnum() or len(sys.argv) != 2 or type(sys.argv[1]) != str:
+    if len(sys.argv) < 2:
+        return print("AssertionError: no arguments are provided")
+    if (not sys.argv[1].isalnum() or
+            len(sys.argv) != 2 or
+            type(sys.argv[1]) is not str):
         return print("AssertionError: the arguments are bad")
     print("".join([morse.get(i, "") for i in sys.argv[1]])[:-1])
 

@@ -7,7 +7,7 @@ def main():
         for line in sys.stdin:
             string = line
         prompt = True
-    if len(sys.argv) == 2 or prompt == True:
+    if len(sys.argv) == 2 or prompt is True:
         upper = 0
         lower = 0
         punct = 0

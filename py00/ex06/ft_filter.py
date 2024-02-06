@@ -1,7 +1,7 @@
 def ft_filter(func: bool, sequence: list):
     ret = []
     for i in sequence:
-        if func(i) == True:
+        if func(i) is True:
             ret.append(i)
     return ret
 
