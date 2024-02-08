@@ -1,33 +1,22 @@
 from load_image import ft_load
-from numpy import ndarray as array, swapaxes
-from PIL import Image
+from numpy import array, swapaxes
 from matplotlib import pyplot as plt
 
 
-def rotate(path: str, height: int, width: int) -> array:
-    try:
-        image = Image.open(path)
-    except FileNotFoundError:
-        return "File not found"
-    ret = array(shape=(height, width), dtype=int)
-    for y in range(0, width):
-        for x in range(0, height):
-            ret[x, y] = image.getpixel((y, x))[0]
-    plt.imshow(swapaxes(ret, 0, 1), cmap="gray")
-    plt.show()
-    return (
-        "New shape after transpose: ("
-        + str(height)
-        + ", "
-        + str(width)
-        + ")\n"
-        + str(ret)
-    )
+def rotate(image: array) -> array:
+    ret = array(image, dtype=int)
+    ret = ret.reshape(ret.shape[0], ret.shape[1])
+    print(f"New shape after Transpose: ({ret.shape[0]}, {ret.shape[1]})")
+    return ret
 
 
 def main():
-    print(ft_load("animal.jpeg", 400, 400, 1))
-    print(rotate("animal.jpeg", 400, 400))
+    image = ft_load("animal.jpeg", 400, 400, 1)
+    print(image)
+    image = rotate(image)
+    print(image)
+    plt.imshow(swapaxes(image, 0, 1), cmap="gray")
+    plt.show()
     return
 
 

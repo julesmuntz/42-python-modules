@@ -1,39 +1,22 @@
 from load_image import ft_load
-from numpy import ndarray as array
-from PIL import Image
+from numpy import array
 from matplotlib import pyplot as plt
 
 
-def zoom(path: str, height: int, width: int, channels: int) -> array:
-    try:
-        image = Image.open(path)
-    except FileNotFoundError:
-        return "File not found"
-    ret = array(shape=(height, width, channels), dtype=int)
-    for y in range(0, width):
-        for x in range(0, height):
-            ret[x, y] = image.getpixel((y, x))[:channels]
-    plt.imshow(ret, cmap='gray')
-    plt.show()
-    return (
-        "New shape after slicing: ("
-        + str(height)
-        + ", "
-        + str(width)
-        + ", "
-        + str(channels)
-        + ") or ("
-        + str(height)
-        + ", "
-        + str(width)
-        + ")\n"
-        + str(ret)
-    )
+def zoom(image: array, height: int, width: int, channels: int) -> array:
+    ret = array(image, dtype=int)
+    ret = ret[:height, :width, :channels]
+    print(f"New shape after slicing: {ret.shape} or ({height}, {width})")
+    return ret
 
 
 def main():
-    print(ft_load("animal.jpeg"))
-    print(zoom("animal.jpeg", 400, 400, 1))
+    image = ft_load("animal.jpeg")
+    print(image)
+    image = zoom(image, 400, 400, 1)
+    print(image)
+    plt.imshow(image, cmap="gray")
+    plt.show()
     return
 
 

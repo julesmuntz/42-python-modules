@@ -9,4 +9,5 @@ def ft_load(path: str) -> array:
         return "File not found"
     ret = array(image)
     print(f"The shape of image is: {ret.shape}")
+    print(ret)
     return ret
