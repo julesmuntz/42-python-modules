@@ -3,6 +3,7 @@ from math import pow
 
 def give_bmi(height: list[int | float],
              weight: list[int | float]) -> list[int | float]:
+    """Calculates the BMI based on the height and weight"""
     return [w / pow(h, 2) for w, h in zip(weight, height)]
 
 

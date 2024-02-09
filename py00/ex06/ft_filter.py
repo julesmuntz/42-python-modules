@@ -1,4 +1,5 @@
 def ft_filter(func: bool, sequence: list):
+    """Filters elements of a sequence from a boolean function"""
     ret = []
     for i in sequence:
         if func(i) is True:

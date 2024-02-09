@@ -3,6 +3,7 @@ from PIL import Image
 
 
 def ft_load(path: str) -> array:
+    """Returns every pixel and its RGB value from the provided image file"""
     try:
         image = Image.open(path)
     except FileNotFoundError:

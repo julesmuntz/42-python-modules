@@ -1,4 +1,6 @@
 def slice_me(family: list, start: int, end: int) -> list:
+    """Returns a truncated version of an array based on the provided start \
+and end arguments"""
     if type(family) is not list:
         return print("Error: not a list")
     start = abs(start)

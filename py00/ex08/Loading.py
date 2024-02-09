@@ -3,6 +3,7 @@ import time
 
 
 def ft_tqdm(lst: range) -> None:
+    """Displays a progress bar based on a range"""
     total = len(lst)
     term_width = os.get_terminal_size().columns
     bar_width = term_width - 40

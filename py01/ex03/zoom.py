@@ -4,6 +4,7 @@ from matplotlib import pyplot as plt
 
 
 def zoom(image: array, height: int, width: int, channels: int) -> array:
+    """Zooms into the image based on the provided dimensions and channel(s)"""
     ret = array(image, dtype=int)
     ret = ret[:height, :width, :channels]
     print(f"New shape after slicing: {ret.shape} or ({height}, {width})")

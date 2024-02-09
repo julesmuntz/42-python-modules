@@ -2,6 +2,7 @@ from pandas import DataFrame as Dataset, read_csv
 
 
 def load(path: str) -> Dataset:
+    """Returns a dataset from the provided CSV file"""
     try:
         if read_csv(path).empty:
             return None

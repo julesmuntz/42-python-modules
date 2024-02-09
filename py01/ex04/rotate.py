@@ -4,6 +4,7 @@ from matplotlib import pyplot as plt
 
 
 def rotate(image: array) -> array:
+    """Transposes an array. It does not rotate, the name is illogical"""
     ret = array(image, dtype=int)
     ret = ret.reshape(ret.shape[0], ret.shape[1])
     print(f"New shape after Transpose: ({ret.shape[0]}, {ret.shape[1]})")
