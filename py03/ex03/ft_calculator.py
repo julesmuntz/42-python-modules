@@ -1,21 +1,27 @@
 class calculator:
     """This is a calculator class"""
 
-    def __init__(self, a, b):
-        self.a = a
-        self.b = b
+    def __init__(self, values):
+        self.values = values
 
     def __add__(self, object) -> None:
-        return calculator(self.a + object.a, self.b + object.b)
+        self.values = [value + object for value in self.values]
+        print(self.values)
 
     def __mul__(self, object) -> None:
-        return calculator(self.a * object.a, self.b * object.b)
+        self.values = [value * object for value in self.values]
+        print(self.values)
 
     def __sub__(self, object) -> None:
-        return calculator(self.a - object.a, self.b - object.b)
+        self.values = [value - object for value in self.values]
+        print(self.values)
 
     def __truediv__(self, object) -> None:
-        return calculator(self.a / object.a, self.b / object.b)
+        try:
+            self.values = [value / object for value in self.values]
+            print(self.values)
+        except ZeroDivisionError:
+            print("Error: division by zero")
 
     def __repr__(self):
-        return "calculator(%s, %s)" % (self.a, self.b)
+        return f"{self.values}"
