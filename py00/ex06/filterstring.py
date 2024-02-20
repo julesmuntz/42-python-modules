@@ -6,7 +6,9 @@ def main():
     if len(sys.argv) != 3:
         return print("AssertionError: the arguments are bad")
     try:
-        if ft_filter(lambda x: not x.isalnum(), sys.argv[1].split()):
+        if ft_filter(
+                lambda x: x in "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~",
+                sys.argv[1]):
             return print(
                 "AssertionError: 1st arg must not contain any special \
                     characters (Punctuation or invisible)"
