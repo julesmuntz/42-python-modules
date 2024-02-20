@@ -5,7 +5,9 @@ import numpy as np
 
 
 class Convert:
+    """Class for converting short scale values to raw numbers"""
     def __init__(self):
+        """Constructor for the Convert class"""
         self.ureg = UnitRegistry()
         self.ureg.define("thousand = 1e3 = k")
         self.ureg.define("million = 1e6 = M")

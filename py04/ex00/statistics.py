@@ -1,4 +1,7 @@
 def ft_statistics(*args: any, **kwargs: any) -> None:
+    """Function that takes in *args a quantity of unknown number and returns \
+the Mean, Median, Quartile (25% and 75%), Standard Deviation and Variance \
+passed in **kwargs"""
     for key, value in kwargs.items():
         try:
             mean = sum(args) / len(args)

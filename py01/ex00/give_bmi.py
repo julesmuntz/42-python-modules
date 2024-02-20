@@ -8,6 +8,7 @@ def give_bmi(height: list[int | float],
 
 
 def apply_limit(bmi: list[int | float], limit: int) -> list[bool]:
+    """Returns a list of booleans based on the BMI and the limit"""
     return [i > limit for i in bmi]
 
 
