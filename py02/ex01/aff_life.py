@@ -4,6 +4,9 @@ from load_csv import load
 
 def main():
     csv = load("life_expectancy_years.csv")
+    if csv is None:
+        print("File not found")
+        return
     data = csv.loc[csv["country"] == "France"]
     years = data.columns[1:]
     values = data.values[0][1:]

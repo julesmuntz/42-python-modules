@@ -25,6 +25,12 @@ def main():
     convert = Convert()
     csv_gdp = load("income_per_person_gdppercapita_ppp_inflation_adjusted.csv")
     csv_le = load("life_expectancy_years.csv")
+    if csv_gdp is None and csv_le is None:
+        print("Files not found")
+        return
+    elif csv_gdp is None or csv_le is None:
+        print("File not found")
+        return
 
     values_gdp = csv_gdp["1900"].apply(convert.short_to_raw).astype(float)
     values_le = csv_le["1900"].apply(convert.short_to_raw).astype(float)

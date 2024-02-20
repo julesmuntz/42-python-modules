@@ -24,6 +24,9 @@ class Convert:
 def main():
     convert = Convert()
     csv = load("population_total.csv")
+    if csv is None:
+        print("File not found")
+        return
 
     data = csv.loc[csv["country"] == "France"]
     years = data.columns[1:]
